@@ -1,0 +1,26 @@
+name: starting git actions
+on: workflow_dipatch
+env:
+  var1: first_var
+  var2: second_var
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    env:
+      var2: job_level_var
+    steps:
+      - name: first steps
+        run:  |
+          echo "var1 : $var1"
+          echo "var2 : $var2"
+    steps:
+      - name: second steps
+        env:
+          var2: step_level_var
+        run:  |
+          echo "var1 : $var1"
+          echo "var2 : $var2"
+    steps:
+      - name: third steps
+        if: ${{ env.var1 == "first_var" }}
+        run: echo "expression for first_var = ${{ env.var1 }} "
