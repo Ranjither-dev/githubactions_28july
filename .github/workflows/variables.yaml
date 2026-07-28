@@ -1,5 +1,5 @@
 name: starting git actions
-on: workflow_dipatch
+on: workflow_dispatch
 env:
   var1: first_var
   var2: second_var
