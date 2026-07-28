@@ -22,5 +22,5 @@ jobs:
           echo "var2 : $var2"
 
       - name: third steps
-        if: ${{ env.var1 == "first_var" }}
+        if: ${{ env.var1 == 'first_var' }}
         run: echo "expression for first_var = ${{ env.var1 }} "
